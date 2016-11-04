@@ -18,9 +18,10 @@ const flickrOptions = {
 app.use(compression()); //use compression
 app.use('/public', express.static(path.join(__dirname, '../client/public/')))
 
+const homePage = path.join(__dirname, '../client/index.html');
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
+  res.sendFile(homePage);
 })
 
 app.get('/api', (req, res) => {

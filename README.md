@@ -1,5 +1,9 @@
 # Discovrto
 
+## setup
+
+`npm run setup`
+
 ## Usage to deploy
 
 `npm install` both client and server.

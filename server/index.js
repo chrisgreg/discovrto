@@ -2,6 +2,8 @@ import express from 'express';
 import pino from 'pino';
 import path from 'path';
 import Flickr from 'flickrapi';
+import compression from 'compression';
+
 
 const app = express();
 const log = pino();
@@ -12,6 +14,8 @@ const flickrOptions = {
   secret: process.env.flickr_secret || ''
 }
 
+
+app.use(compression()); //use compression
 app.use('/public', express.static(path.join(__dirname, '../client/public/')))
 
 

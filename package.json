@@ -17,6 +17,7 @@
   "author": "Chris Gregori",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.6.2",
     "express": "^4.14.0",
     "flickrapi": "^0.6.0",
     "pino": "^2.14.0",

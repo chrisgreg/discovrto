@@ -1,4 +1,4 @@
-### Discovrto
+# Discovrto
 
 ## Usage to deploy
 

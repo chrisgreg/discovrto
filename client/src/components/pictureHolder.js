@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class PictureHolder extends Component {
+class PictureHolder extends Component {
   render() {
     return (
       <div>
@@ -10,3 +11,10 @@ export default class PictureHolder extends Component {
     )
   }
 }
+
+
+function mapStateToProps({ pictures }) {
+  return { pictures };
+}
+
+export default connect(mapStateToProps)(PictureHolder);

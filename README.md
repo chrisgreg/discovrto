@@ -15,3 +15,4 @@
 - Streamline build scripts
 - Implement Redux
 - Do the client side code
+- Cache response

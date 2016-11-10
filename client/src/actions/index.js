@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 export const GET_PICTURES = 'GET_PICTURES';
+export const NEXT_PICTURE = 'NEXT_PICTURE';
+
 
 export function getPictures() {
 
@@ -10,5 +12,11 @@ export function getPictures() {
   return {
     type: GET_PICTURES,
     payload: request
+  }
+}
+
+export function nextPicture() {
+  return {
+    type: NEXT_PICTURE
   }
 }

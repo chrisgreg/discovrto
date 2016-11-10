@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getPictures } from '../actions/index';
+import { getPictures, nextPicture } from '../actions/index';
 
 class PictureHolder extends Component {
 
@@ -14,15 +14,19 @@ class PictureHolder extends Component {
   }
 
   nextImage() {
-    console.log('Todo: Increment current picture');
+    this.props.nextPicture();
   }
 
   render() {
     return (
       <div>
         <div>
-          <img src="http://placekitten.com/g/200/300"></img>
-          <h6>Artist: <a href="">William A</a></h6>
+          <img src={this.props.pictures.currentPicture.largeUrl}></img>
+          <h6>Artist:
+            <a href={`https://www.flickr.com/photos/${this.props.pictures.currentPicture.owner.ownerId}`}>
+              {this.props.pictures.currentPicture.owner.ownerName}
+            </a>
+          </h6>
         </div>
         <a onClick={this.nextImage.bind(this)}>Next  Image</a>
       </div>
@@ -36,5 +40,6 @@ function mapStateToProps({ pictures }) {
 }
 
 export default connect(mapStateToProps, {
-  getPictures
+  getPictures,
+  nextPicture
 })(PictureHolder);

@@ -8,11 +8,13 @@ const INITIAL_STATE = {
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
     case GET_PICTURES:
-      console.log(action);
-      return {
-        pictures: [ action.data ],
-        currentPicture: action.data[0]
+      const photoData = action.payload.data.result;
+      const newState = {
+        pictures: [ photoData ],
+        currentPicture: photoData[0]
       }
+      console.log(newState);
+      return newState;
   }
 
   return state;

@@ -4,7 +4,6 @@ import path from 'path';
 import Flickr from 'flickrapi';
 import compression from 'compression';
 
-
 const app = express();
 const log = pino();
 const port = 4040;
@@ -42,11 +41,48 @@ app.get('/api', (req, res) => {
       }
       res.json({
         success: true,
-        result
+        result: parseResult(result)
       })
     });
   });
 });
+
+function parseResult(data){
+  let photoData = data.photos.photo.map(photoData => {
+    return {
+      id: photoData.id,
+      owner: {
+        ownerId: photoData.owner,
+        ownerName: photoData.ownername,
+      },
+      title: photoData.title,
+      description: photoData.description,
+      views: photoData.views,
+      originalUrl: photoData.url_o,
+      largeUrl: photoData.url_l
+    }
+  });
+  return shuffle(photoData);
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 function handleError(req, res, err) {
   // Log and send status code

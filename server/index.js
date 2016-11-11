@@ -9,8 +9,8 @@ const log = pino();
 const port = 4040;
 
 const flickrOptions = {
-  api_key: process.env.flickr_api_key || '',
-  secret: process.env.flickr_secret || ''
+  api_key: process.env.flickr_api_key || '0b3dc61eab7370c5b8e9b29bb744b422',
+  secret: process.env.flickr_secret || '332c3cf370fed85e'
 }
 
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPictures, nextPicture } from '../actions/index';
+import PictureInformation from './pictureInformation';
 
 class PictureHolder extends Component {
 
@@ -19,16 +20,17 @@ class PictureHolder extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <img src={this.props.pictures.currentPicture.largeUrl}></img>
-          <h6>Artist:
-            <a href={`https://www.flickr.com/photos/${this.props.pictures.currentPicture.owner.ownerId}`}>
-              {this.props.pictures.currentPicture.owner.ownerName}
-            </a>
-          </h6>
-        </div>
-        <a onClick={this.nextImage.bind(this)}>Next  Image</a>
+      <div className="pictureHolder">
+
+          <div className="image-box">
+            <img src={this.props.pictures.currentPicture.largeUrl}></img>
+          </div>
+
+          <div className="image-details">
+            <PictureInformation picture={this.props.pictures.currentPicture}/>
+            <h4><a onClick={this.nextImage.bind(this)}>Next  Image</a></h4>
+          </div>
+
       </div>
     )
   }

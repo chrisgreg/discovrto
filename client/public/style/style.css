@@ -1,0 +1,60 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 100;
+  margin-bottom: 0;
+  text-shadow: 0 4px 0px #dadada;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  margin: auto;
+  width: 60%;
+}
+
+.pictureHolder {
+  display: flex;
+  flex-direction: column;
+  max-width:1200px;
+}
+
+.pictureHolder > .image-box {
+  width: 100%;
+  display: block;
+  position: relative;
+  background-color: #f7f7f7;
+  background-clip: content-box;
+  overflow: hidden;
+}
+
+
+.pictureHolder > .image-box > img  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover;
+  width: auto;
+  height: 100% !important;
+}
+
+.image-box:after {
+  padding-top: 66%;
+  display: block;
+  content: '';
+}
+
+a {
+  text-decoration: none;
+  margin-left:4px;
+}

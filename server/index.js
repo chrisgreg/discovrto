@@ -6,11 +6,11 @@ import compression from 'compression';
 
 const app = express();
 const log = pino();
-const port = 4040;
+const port = process.env.PORT || 4040;
 
 const flickrOptions = {
-  api_key: process.env.flickr_api_key || '',
-  secret: process.env.flickr_secret || ''
+  api_key: process.env.APIKEY || '',
+  secret: process.env.SECRET || ''
 }
 
 

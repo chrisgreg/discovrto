@@ -28,7 +28,17 @@ class PictureHolder extends Component {
 
           <div className="image-details-container">
             <PictureInformation picture={this.props.pictures.currentPicture}/>
-            <h4 className="next-image details-box"><a onClick={this.nextImage.bind(this)}>Next  Image</a></h4>
+            <h4 className="next-image details-box"><a onClick={this.nextImage.bind(this)}>Next Image</a></h4>
+          </div>
+
+          <div className="details-box">
+            <div className="description about">
+              <p>
+                discovrto is a React/Redux application using the Flickr API to randomly display artists' images along with their details.
+                <br></br><br></br>
+                <b>Disclaimer:</b> discovrto may occasionally display NSFW images - the content is not validated in anyway.
+              </p>
+            </div>
           </div>
 
       </div>

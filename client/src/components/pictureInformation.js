@@ -6,7 +6,7 @@ export default class PictureInformation extends Component {
     const details = this.props.picture;
 
     return (
-      <div className="details  details-box">
+      <div className="details details-box">
         <h2 className="title">{details.title} by
           <a href={`https://www.flickr.com/photos/${details.owner.ownerId}`}>
             {details.owner.ownerName}

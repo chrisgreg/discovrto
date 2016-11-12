@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server/index.js --exec babel-node",
     "build": "babel server -d dist",
-    "start": "node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "perf:env": "NODE_ENV=production node dist/index.js",
     "perf:test": "wrk -c 5 -d 5 --latency http://localhost:4040",
     "setup": "sh build.sh"

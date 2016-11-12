@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family: 'Comfortaa', cursive;
   text-align: center;
 }
@@ -8,6 +8,15 @@ h1 {
   font-weight: 100;
   margin-bottom: 0;
   text-shadow: 0 4px 0px #dadada;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
 }
 
 p {
@@ -54,7 +63,57 @@ p {
   content: '';
 }
 
+.image-details-container {
+  display: flex;
+  min-height:180px;
+}
+
+.details-box {
+  background: #f4f4f4;
+  margin: 10px 0px 0px 0px;
+  text-align: left;
+}
+
+.image-details-container > .details {
+  width: 66%;
+}
+
+.image-details-container > .next-image {
+  width: 33%;
+  margin: 10px 0px 0px 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+.details > .description {
+  padding: 10px 15px;
+}
+
+.details > .title {
+  text-align: left;
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+}
+
+.heart {
+  height: 10px;
+  margin: 0 5px;
+}
+
 a {
   text-decoration: none;
   margin-left:4px;
+  color: orange;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.footer > h5 {
+  font-family: 'Comfortaa';
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

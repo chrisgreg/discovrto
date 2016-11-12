@@ -6,13 +6,13 @@ export default class PictureInformation extends Component {
     const details = this.props.picture;
 
     return (
-      <div>
-      <h2>{details.title} by
-        <a href={`https://www.flickr.com/photos/${details.owner.ownerId}`}>
-          {details.owner.ownerName}
-        </a>
-      </h2>
-      <h3>{this.getDescription()}</h3>
+      <div className="details  details-box">
+        <h2 className="title">{details.title} by
+          <a href={`https://www.flickr.com/photos/${details.owner.ownerId}`}>
+            {details.owner.ownerName}
+          </a>
+        </h2>
+        <p className="description">{this.getDescription()}</p>
       </div>
     )
   }
@@ -21,7 +21,6 @@ export default class PictureInformation extends Component {
     if (!this.props.picture) {
       return '';
     } else {
-
       return this.props.picture.description ? this.props.picture.description._content : '';
     }
 

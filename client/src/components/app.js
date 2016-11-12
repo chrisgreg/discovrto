@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
+import Footer from './footer';
 import PictureHolder from './pictureHolder';
 
 export default class App extends Component {
@@ -8,6 +9,7 @@ export default class App extends Component {
       <div>
         <Header />
         <PictureHolder />
+        <Footer />
       </div>
     );
   }

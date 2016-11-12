@@ -26,9 +26,9 @@ class PictureHolder extends Component {
             <img src={this.props.pictures.currentPicture.largeUrl}></img>
           </div>
 
-          <div className="image-details">
+          <div className="image-details-container">
             <PictureInformation picture={this.props.pictures.currentPicture}/>
-            <h4><a onClick={this.nextImage.bind(this)}>Next  Image</a></h4>
+            <h4 className="next-image details-box"><a onClick={this.nextImage.bind(this)}>Next  Image</a></h4>
           </div>
 
       </div>
